@@ -1,0 +1,20 @@
+{
+  "name": "hipermidia-trab3",
+  "version": "1.0.0",
+  "description": "site responsivo com gridlayout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jamerson Silva",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-imagemin": "^4.1.0"
+  }
+}

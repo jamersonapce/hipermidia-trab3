@@ -65,3 +65,24 @@
 .section2 .para {
   grid-area: paragrafo;
 }
+
+@media (max-width: 768px) {
+  .section2-header{
+      grid-template-columns: 3% repeat(1,1fr) 3%;
+  }
+
+  .section2-body{
+    grid-template-columns: 3% repeat(1, 1fr) 3%;
+    grid-template-rows:repeat(1, 0.1fr min-content 0.2fr min-content 0.2fr 0.5fr 0.1fr );
+    grid-template-areas:
+    ".       .      ."
+    ".      h2      ."
+    ".    texto     ."
+    ".   conteudo1  ."
+    ".   conteudo2  ."
+    ".   img-crie   ."
+    ".       .      .";
+    background-color: #333333;
+  }
+
+}

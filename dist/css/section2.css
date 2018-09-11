@@ -1,0 +1,88 @@
+.section2{
+  grid-area: section2;
+  display: grid;
+  grid-auto-rows: minmax(min-content, min-content);
+  grid-template-areas:
+      "section2-header"
+      "section2-body";
+}
+
+.section2-header{
+  grid-area: section2-header;
+  display: grid;
+  grid-template-columns: 14% repeat(1, 12fr) 14%;
+  row-gap: 2rem;
+  background-color: #337ab7;
+  grid-template-areas:
+      "."
+      "s2-h-conteudo"
+      ".";
+}
+
+.s2-h-conteudo{
+  grid-area: s2-h-conteudo;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.section2-body{
+  grid-area: section2-body;
+  display: grid;
+  grid-template-columns: 14% repeat(2, 1fr) 14%;
+  grid-template-rows:repeat(1, 0.2fr min-content 0.5fr min-content 0.5fr 0.2fr );
+  column-gap: 0.2rem;
+  row-gap: 0.5rem;
+  grid-template-areas:
+  ".     .         .       ."
+  ".    h2       img-crie  ."
+  ".   texto     img-crie  ."
+  ". conteudo1   img-crie  ."
+  ". conteudo2   img-crie  ."
+  ".     .         .       .";
+  background-color: #333333;
+}
+
+.section2-body .img-section{
+  grid-area: img-crie;
+  text-align: center;
+}
+
+.section2 .img-section img{
+  box-shadow: 1px 3px rgb(136,136,136, 0.9);
+}
+
+.section2-body h2{
+  grid-area: h2;
+}
+
+.section2-body p{
+  grid-area: texto;
+}
+
+.section2 .para {
+  grid-area: paragrafo;
+}
+
+@media (max-width: 768px) {
+  .section2-header{
+      grid-template-columns: 3% repeat(1,1fr) 3%;
+  }
+
+  .section2-body{
+    grid-template-columns: 3% repeat(1, 1fr) 3%;
+    grid-template-rows:repeat(1, 0.1fr min-content 0.2fr min-content 0.2fr 0.5fr 0.1fr );
+    grid-template-areas:
+    ".       .      ."
+    ".      h2      ."
+    ".    texto     ."
+    ".   conteudo1  ."
+    ".   conteudo2  ."
+    ".   img-crie   ."
+    ".       .      .";
+    background-color: #333333;
+  }
+
+}

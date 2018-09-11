@@ -153,3 +153,37 @@
   margin: 0 0.8rem 0.8rem 0.8rem;
   background-color: #edeaea;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 3% repeat(12,1fr) 3%;
+    column-gap: 0.5rem;
+  }
+
+  .menu-logo{
+    grid-column-end: 3;
+    font-size: 1rem;
+  }
+
+  .menu-list{
+    grid-column-start: 6;
+  }
+
+  .header-section{
+    grid-template-columns: 3% repeat(1,1fr) 3%;
+    grid-template-areas:
+        "form";
+  }
+  .header-section .home{
+    display: none;
+  }
+  .form {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .section1-header{
+      grid-template-columns: 3% repeat(1,1fr) 3%;
+  }
+
+}

@@ -5,10 +5,13 @@ const concat = require('gulp-concat');
 const htmlReplace = require('gulp-html-replace');
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync');
+const htmlmin = require('gulp-htmlmin');
+const inlinesource = require('gulp-inline-source');
+const express = require('express');
 
 
 gulp.task('default', ['copy'], function() {
-   gulp.start('build-img', 'merge-css', 'html-replace');
+   gulp.start('imagemin', 'merge-css', 'html-replace', 'minify-html', 'express');
 });
 
 gulp.task('clean', function() {
@@ -23,7 +26,7 @@ gulp.task('copy', ['clean'] ,  function() {
 });
 
 
-gulp.task('build-img', function() {
+gulp.task('imagemin', function() {
    gulp.src('dist/img/**/*')
        .pipe(imagemin() )
        .pipe(gulp.dest('dist/img') );
@@ -43,10 +46,26 @@ gulp.task('merge-css', function() {
        .pipe(gulp.dest('dist/css') );
 });
 
+/*-------------------  HTML  ------------------*/
+
+/* Minify HTML */
+gulp.task('minify-html', function() {
+    gulp.src('dist/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('html-replace', function() {
    gulp.src('dist/**/*.html')
       .pipe(htmlReplace({css:'css/site.css'}) )
       .pipe(gulp.dest('dist') );
+});
+
+/*----------------- Servidor ------------------*/
+gulp.task('express', function(){
+    var app = express();
+    app.use(express.static(__dirname + '/dist/'));
+    app.listen(process.env.PORT || 5000);
 });
 
 /*----------- Dev ------------------ */
@@ -58,20 +77,3 @@ gulp.task('browser-sync', function() {
     });
     gulp.watch('src/**/*').on('change',  browserSync.reload );
 });
-
-// gulp.task('server', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: 'src'
-//         }
-//     });
-//
-//     gulp.watch('src/**/*').on('change', browserSync.reload);
-//
-//     gulp.watch('src/css/**/*.css').on('change', function(event) {
-//         gulp.src(event.path)
-//             .pipe(csslint())
-//             .pipe(csslint.formatter());
-//     });
-//
-// });

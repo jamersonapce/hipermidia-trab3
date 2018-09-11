@@ -182,8 +182,4 @@
     grid-column-end: 3;
   }
 
-  .section1-header{
-      grid-template-columns: 3% repeat(1,1fr) 3%;
-  }
-
 }

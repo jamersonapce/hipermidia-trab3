@@ -60,3 +60,22 @@
 .section1 .para {
   grid-area: paragrafo;
 }
+
+@media (max-width: 768px) {
+  .section1-header{
+      grid-template-columns: 3% repeat(1,1fr) 3%;
+  }
+
+  .section1-body{
+    grid-template-columns: 3% repeat(1, 1fr) 3%;
+    grid-template-rows:repeat(1, 0.1fr 0.5fr min-content 0.2fr min-content 0.2fr 0.1fr );
+    grid-template-areas:
+    ".       .         ."
+    ".   img-explore   ."
+    ".      h2         ."
+    ".    texto        ."
+    ".   conteudo1     ."
+    ".   conteudo2     ."
+    ".       .        .";
+  }
+}

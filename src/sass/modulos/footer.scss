@@ -2,11 +2,11 @@
   grid-area: footer;
   display: grid;
   row-gap: 1.5rem;
-  background-color: #333333;
+  @extend %background-color-cinza;
   grid-template-areas:
-  "."
-  "conteudo-footer"
-  ".";
+  ". . ."
+  ". conteudo-footer ."
+  ". . .";
 }
 
 .conteudo-footer{
@@ -15,11 +15,11 @@
 }
 
 .conteudo-footer .button{
-  background-color: #337ab7;
+  @extend %background-color-azul;
   margin: 0.8rem;
-  border: 1px solid #337ab7;
-  border-radius: 5px;
-  color: #eaedf2;
+  border: 1px solid $cor-azul;
+  @include borda-arredondada(5px);
+  color: $cor-base;
   min-height: 1.8em;
   min-width: 8em;
   font-size: 1em;

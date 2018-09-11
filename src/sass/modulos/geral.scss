@@ -2,7 +2,6 @@
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   margin: 0;
 	padding: 0;
-  /* text-align: justify; */
 }
 strong{
   color: #fff;
@@ -11,7 +10,7 @@ strong{
 .wrapper {
   display: grid;
   height: 100vh;
-  color: #edeaea;
+  color: $cor-base;
   grid-template-areas:
       "header"
       "section1"
@@ -24,13 +23,13 @@ strong{
   border-radius: 50%;
   width: 90%;
   height: auto;
-  box-shadow: -1px 3px rgb(136,136,136, 0.9);
+  @extend %sobra-padronizada-esq;
 }
 
 .button{
     margin: 0.4rem 0.8rem 0 0.8rem;
     padding: 0.8rem;
-    border: 1px solid #edeaea;
+    border: 1px solid $cor-base;
     border-radius: 5px;
     background-color: transparent;
     color: #eaedf2;

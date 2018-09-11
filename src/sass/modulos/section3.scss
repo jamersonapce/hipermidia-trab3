@@ -10,21 +10,19 @@
 .section3-header{
   grid-area: section3-header;
   display: grid;
-  grid-template-columns: 14% repeat(1, 12fr) 14%;
+  grid-template-columns: 14% repeat(1, 1fr) 14%;
   row-gap: 2rem;
   background-color: #337ab7;
   grid-template-areas:
-      "."
-      "s3-h-conteudo"
-      ".";
+      ". . ."
+      ". s3-h-conteudo ."
+      ". . .";
 }
 
 .s3-h-conteudo{
   grid-area: s3-h-conteudo;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
   text-align: center;
+  align-self: center;
   font-size: 1.2rem;
 }
 
@@ -34,7 +32,8 @@
   grid-template-columns: 14% repeat(2, 1fr) 14%;
   grid-template-rows:repeat(1, 0.2fr min-content 0.5fr min-content 0.5fr 0.2fr );
   column-gap: 0.2rem;
-  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  // row-gap: 0.5rem;
   color:#878791;
   grid-template-areas:
   ".        .              .        ."

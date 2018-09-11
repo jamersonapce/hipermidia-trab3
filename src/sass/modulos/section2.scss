@@ -14,17 +14,15 @@
   row-gap: 2rem;
   background-color: #337ab7;
   grid-template-areas:
-      "."
-      "s2-h-conteudo"
-      ".";
+      ". . ."
+      ". s2-h-conteudo ."
+      ". . .";
 }
 
 .s2-h-conteudo{
   grid-area: s2-h-conteudo;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
   text-align: center;
+  align-self: center;
   font-size: 1.2rem;
 }
 
@@ -51,7 +49,7 @@
 }
 
 .section2 .img-section img{
-  box-shadow: 1px 3px rgb(136,136,136, 0.9);
+  box-shadow: 1px 3px rgba(136,136,136, 0.9);
 }
 
 .section2-body h2{

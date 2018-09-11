@@ -19,7 +19,7 @@
   grid-template-columns: 14% repeat(12, 1fr) 14%;
   align-content: start;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.8);
+  @extend %background-color-sombra;
   border-bottom: 3px solid #337ab7;
 }
 
@@ -123,10 +123,10 @@
   grid-column-end: 14;
   grid-row-start: 2;
   grid-row-end: 6;
-  background: rgb(51,122,183, 0.6);
+  background: rgba(51,122,183, 0.6);
   border-radius: 5px;
   padding: 0.8rem;
-  box-shadow: 5px 8px rgb(136,136,136, 0.6);
+  @extend %sobra-padronizada-form;
   text-align: center;
   grid-template-areas:
   "form-header"
@@ -151,7 +151,7 @@
   border-radius: 5px;
   padding: 0.7rem 0 1rem 3.2rem;
   margin: 0 0.8rem 0.8rem 0.8rem;
-  background-color: #edeaea;
+  background-color: $cor-base;
 }
 
 @media (max-width: 768px) {
